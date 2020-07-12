@@ -1,5 +1,6 @@
 package cn.tll.config;
 
+import org.springframework.util.StringUtils;
 import org.springframework.web.servlet.LocaleResolver;
 
 import javax.servlet.http.HttpServletRequest;
@@ -22,7 +23,7 @@ public class MyLocaleResolver implements LocaleResolver {
         //如果没有 就使用默认的
         Locale locale = Locale.getDefault();
         //判断language是否为空
-        if (!language.isEmpty()){
+        if (!StringUtils.isEmpty(language)){
             //切割字符串
             String[] split = language.split("_");
             //国家  地区
